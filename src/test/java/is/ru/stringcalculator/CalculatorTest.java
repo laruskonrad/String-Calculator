@@ -63,4 +63,9 @@ public class CalculatorTest {
     public void testMultipleNegativeNumbers() throws Exception {
     	assertEquals(1, Calculator.add("2,-4,3,-5"));
     }
+
+    @Test
+    public void testNumbersBiggerThanThousand() throws Exception {
+    	assertEquals(1, Calculator.add("1001,1"));
+    }
 }

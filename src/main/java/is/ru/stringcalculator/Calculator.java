@@ -31,6 +31,7 @@ public class Calculator {
       
     private static int sum(String[] numbers) throws Exception {
     	checkForNegativeNumbers(numbers);
+    	checkForLargeNumbers(numbers);
 
  	    int total = 0;
         for(String number : numbers){
@@ -43,6 +44,14 @@ public class Calculator {
     	for(int i = 0; i < numbers.length; i++){
     		if(toInt(numbers[i]) < 0){
     			throw new Exception("Negatives not allowed: " + getNegativeNumbers(numbers));
+    		}
+    	}
+    }
+
+    private static void checkForLargeNumbers(String[] numbers) {
+    	for(int i = 0; i < numbers.length; i++) {
+    		if(toInt(numbers[i]) > 1000) {
+    			numbers[i] = "0";
     		}
     	}
     }
