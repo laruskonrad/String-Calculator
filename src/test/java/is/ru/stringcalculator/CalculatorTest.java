@@ -10,47 +10,52 @@ public class CalculatorTest {
     }
 
 	@Test
-	public void testEmptyString() {
+	public void testEmptyString() throws Exception {
 		assertEquals(0, Calculator.add(""));
 	}
 
 	@Test
-	public void testOneNumber() {
+	public void testOneNumber() throws Exception {
 		assertEquals(1, Calculator.add("1"));
 	}
 
 	@Test
-	public void testTwoNumbersWithComma() {
+	public void testTwoNumbersWithComma() throws Exception {
 		assertEquals(3, Calculator.add("1,2"));
 	}	
 
 	@Test
-    public void testMultipleNumbers(){
+    public void testMultipleNumbers() throws Exception {
     	assertEquals(6, Calculator.add("1,2,3"));
     }
 
     @Test
-    public void testLotsOfNumber(){
+    public void testLotsOfNumber() throws Exception {
     	assertEquals(15, Calculator.add("0,1,2,3,4,5"));
     }
 
     @Test
-    public void testNewLineWithComma(){
+    public void testNewLineWithComma() throws Exception {
     	assertEquals(6, Calculator.add("1\n2,3"));
     }
 
     @Test
-    public void testOnlyNewline(){
+    public void testOnlyNewline() throws Exception {
     	assertEquals(2, Calculator.add("1\n1"));
     }
 
     @Test
-    public void testMultipleOnlyNewline(){
+    public void testMultipleOnlyNewline() throws Exception {
     	assertEquals(15, Calculator.add("1\n2\n3\n4\n5"));
     }
 
     @Test
-    public void testNewDelimiter(){
+    public void testNewDelimiter() throws Exception {
     	assertEquals(3, Calculator.add("//;\n1;2"));
+    }
+
+    @Test
+    public void testNegativeNumber() throws Exception {
+    	assertEquals(1, Calculator.add("-1, 2"));
     }
 }

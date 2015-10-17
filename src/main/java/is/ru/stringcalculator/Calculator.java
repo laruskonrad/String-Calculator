@@ -4,7 +4,7 @@ public class Calculator {
 
 	public static String delimiter = ",|\n";
 
-	public static int add(String text){
+	public static int add(String text) throws Exception {
 		if(text.equals("")){
 			return 0;
 		}
@@ -29,11 +29,21 @@ public class Calculator {
 	    return numbers.split(delimiter);
 	}
       
-    private static int sum(String[] numbers){
+    private static int sum(String[] numbers) throws Exception {
+    	checkForNegativeNumbers(numbers);
+
  	    int total = 0;
         for(String number : numbers){
 		    total += toInt(number);
 		}
 		return total;
+    }
+
+    private static void checkForNegativeNumbers(String[] numbers) throws Exception{
+    	for(int i = 0; i < numbers.length; i++){
+    		if(toInt(numbers[i]) < 0){
+    			throw new Exception("Negatives not allowed: " + numbers[i]);
+    		}
+    	}
     }
 }
