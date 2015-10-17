@@ -18,13 +18,8 @@ public class Calculator {
 	}
 
 	private static String[] splitNumbers(String numbers){
-		//numbers = splitNewLine(numbers);
 	    return numbers.split(",|\\n");
 	}
-
-	/*private static String[] splitNewLine(String numbers){
-		return numbers.split("\n");
-	}*/
       
     private static int sum(String[] numbers){
  	    int total = 0;
