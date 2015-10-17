@@ -20,7 +20,7 @@ public class CalculatorTest {
 	}
 
 	@Test
-	public void testTwoNumbers() {
+	public void testTwoNumbersWithComma() {
 		assertEquals(3, Calculator.add("1,2"));
 	}	
 
@@ -35,7 +35,7 @@ public class CalculatorTest {
     }
 
     @Test
-    public void testNewLine(){
+    public void testNewLineWithComma(){
     	assertEquals(6, Calculator.add("1\n2,3"));
     }
 
@@ -45,7 +45,12 @@ public class CalculatorTest {
     }
 
     @Test
-    public void testMultipleNewlines(){
+    public void testMultipleOnlyNewline(){
     	assertEquals(15, Calculator.add("1\n2\n3\n4\n5"));
+    }
+
+    @Test
+    public void testNewDelimiter(){
+    	assertEquals(3, Calculator.add("//;\n1;2"));
     }
 }
