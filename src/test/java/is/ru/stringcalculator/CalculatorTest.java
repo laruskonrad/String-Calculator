@@ -56,6 +56,11 @@ public class CalculatorTest {
 
     @Test
     public void testNegativeNumber() throws Exception {
-    	assertEquals(1, Calculator.add("-1, 2"));
+    	assertEquals(1, Calculator.add("-1,2"));
+    }
+
+    @Test
+    public void testMultipleNegativeNumbers() throws Exception {
+    	assertEquals(1, Calculator.add("2,-4,3,-5"));
     }
 }

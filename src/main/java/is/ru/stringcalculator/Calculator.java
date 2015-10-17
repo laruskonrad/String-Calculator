@@ -42,8 +42,18 @@ public class Calculator {
     private static void checkForNegativeNumbers(String[] numbers) throws Exception{
     	for(int i = 0; i < numbers.length; i++){
     		if(toInt(numbers[i]) < 0){
-    			throw new Exception("Negatives not allowed: " + numbers[i]);
+    			throw new Exception("Negatives not allowed: " + getNegativeNumbers(numbers));
     		}
     	}
     }
+
+    private static String getNegativeNumbers(String[] numbers){
+    	String negativeNumbers = "";
+    	for(int i = 0; i < numbers.length; i++){
+    		if(toInt(numbers[i]) < 0){
+    			negativeNumbers = negativeNumbers + numbers[i] + ",";
+    		}
+    	}
+
+    	return negativeNumbers.substring(0, negativeNumbers.length()-1);    }
 }
