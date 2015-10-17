@@ -29,4 +29,9 @@ public class CalculatorTest {
     	assertEquals(6, Calculator.add("1,2,3"));
     }
 
+    @Test
+    public void testLotsOfNumber(){
+    	assertEquals(15, Calculator.add("0,1,2,3,4,5"));
+    }
+
 }
